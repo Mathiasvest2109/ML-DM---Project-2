@@ -38,10 +38,6 @@ print(heart_disease.variables)
 print("Features (X):")
 print(X.columns)
 
-# List the target column name for y
-print("\nTarget (y):")
-print(y.columns)
-
 # Compute summary statistics
 mean_x = X.mean()
 std_x = X.std(ddof=1)
