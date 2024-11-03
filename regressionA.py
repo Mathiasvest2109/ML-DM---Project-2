@@ -1,66 +1,60 @@
-import importlib_resources
-import numpy as np
-import scipy.linalg as linalg
-from matplotlib.pyplot import (
-    cm,
-    figure,
-    imshow,
-    legend,
-    plot,
-    show,
-    subplot,
-    title,
-    xlabel,
-    ylabel,
-    yticks,
-)
-from scipy.io import loadmat
 import pandas as pd
-from ucimlrepo import fetch_ucirepo 
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_absolute_error, mean_squared_error
+import matplotlib.pyplot as plt
+from ucimlrepo import fetch_ucirepo
 
-# fetch dataset 
-heart_disease = fetch_ucirepo(id=45) 
+# Load the dataset from UCI repository
+heart_disease = fetch_ucirepo(id=45)
+data = heart_disease.data.features
 
-# data (as pandas dataframes) 
-X = heart_disease.data.features 
-y = heart_disease.data.targets 
+# Set the target variable as 'thalach' (Max Heart Rate)
+y = data['thalach']
 
-# Add the target variable 'num' as a column in X
-X['num'] = y
-print("Dataset with 'num' as target column:")
-print(X)
+# Select features for the regression model and remove the target variable 'thalach' from X
+X = data.drop(columns=['thalach'])
 
-# metadata 
-# Uncomment if needed
-# print(heart_disease.metadata) 
+# Apply one-of-K encoding to categorical variables (e.g., 'cp' for chest pain type)
+X_encoded = pd.get_dummies(X, drop_first=True)
 
-# variable information 
-print("\nVariables Information:")
-print(heart_disease.variables)
+# Drop rows with missing values in both X_encoded and y
+X_encoded = X_encoded.dropna()
+y = y[X_encoded.index]  # Ensure y is aligned with X after dropping rows
 
-# List the feature names for X
-print("\nFeatures (X):")
-print(X.columns)
+# Split the data into training and testing sets (80% train, 20% test)
+X_train, X_test, y_train, y_test = train_test_split(X_encoded, y, test_size=0.2, random_state=0)
 
-# Compute summary statistics
-mean_x = X.mean()
-std_x = X.std(ddof=1)
-median_x = X.median()  # Use X.median() directly
-range_x = X.max() - X.min()
+# Standardize the features in both training and testing sets
+scaler = StandardScaler()
+X_train = scaler.fit_transform(X_train)  # Fit and transform on training data
+X_test = scaler.transform(X_test)        # Only transform on testing data
 
-# Display results
-#print("\nSummary Statistics:")
-#print("Mean:\n", mean_x)
-#print("Standard Deviation:\n", std_x)
-#print("Median:\n", median_x)
-#print("Range:\n", range_x)
+# Train a linear regression model on the training data
+model = LinearRegression()
+model.fit(X_train, y_train)
 
-# Add preprocessing to account for missing values in dataset before introducing SVD
-# For example, fill missing values with the mean of each column
-X = X.fillna(X.mean())
+# Make predictions on the testing data
+y_pred = model.predict(X_test)
 
-# Print dataset after filling missing values (optional)
-print("\nDataset after handling missing values:")
-print(X)
+# Model evaluation metrics on testing data
+mae = mean_absolute_error(y_test, y_pred)
+mse = mean_squared_error(y_test, y_pred)
+print("\nModel Evaluation Metrics (on testing data):")
+print(f"Mean Absolute Error (MAE): {mae:.2f}")
+print(f"Mean Squared Error (MSE): {mse:.2f}")
 
-# Proceed with SVD or other analysis here
+# Display the intercept and coefficients of the model
+print("\nModel Intercept:", model.intercept_)
+print("Model Coefficients:", model.coef_)
+
+# Plot actual vs predicted values on testing data
+plt.figure(figsize=(8, 6))
+plt.scatter(y_test, y_pred, alpha=0.5)
+plt.xlabel("Max Heart Rate (Actual)")
+plt.ylabel("Max Heart Rate (Predicted)")
+plt.title("Predicted vs Actual Max Heart Rate (thalach) on Testing Data")
+plt.legend(["Predicted vs Actual"])
+plt.show()
