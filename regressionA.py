@@ -17,41 +17,50 @@ from matplotlib.pyplot import (
 from scipy.io import loadmat
 import pandas as pd
 from ucimlrepo import fetch_ucirepo 
-  
+
 # fetch dataset 
 heart_disease = fetch_ucirepo(id=45) 
-  
+
 # data (as pandas dataframes) 
 X = heart_disease.data.features 
 y = heart_disease.data.targets 
 
-X['target'] = y
+# Add the target variable 'num' as a column in X
+X['num'] = y
+print("Dataset with 'num' as target column:")
 print(X)
-  
+
 # metadata 
-#print(heart_disease.metadata) 
-  
+# Uncomment if needed
+# print(heart_disease.metadata) 
+
 # variable information 
-print(heart_disease.variables) 
+print("\nVariables Information:")
+print(heart_disease.variables)
 
 # List the feature names for X
-print("Features (X):")
+print("\nFeatures (X):")
 print(X.columns)
 
 # Compute summary statistics
 mean_x = X.mean()
 std_x = X.std(ddof=1)
-median_x = np.median(X)
+median_x = X.median()  # Use X.median() directly
 range_x = X.max() - X.min()
 
 # Display results
-print("Vector:", X)
-print("Mean:", mean_x)
-print("Standard Deviation:", std_x)
-print("Median:", median_x)
-print("Range:", range_x)
+#print("\nSummary Statistics:")
+#print("Mean:\n", mean_x)
+#print("Standard Deviation:\n", std_x)
+#print("Median:\n", median_x)
+#print("Range:\n", range_x)
 
-# Save the features dataset (X) to a CSV file
-X.to_csv("features.csv", index=False)
+# Add preprocessing to account for missing values in dataset before introducing SVD
+# For example, fill missing values with the mean of each column
+X = X.fillna(X.mean())
 
-#Add prprocessing to account for missing values in dataset before introducing SVD
+# Print dataset after filling missing values (optional)
+print("\nDataset after handling missing values:")
+print(X)
+
+# Proceed with SVD or other analysis here
