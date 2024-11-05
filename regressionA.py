@@ -5,7 +5,6 @@ from matplotlib.pylab import (
     figure,
     grid,
     legend,
-    loglog,
     semilogx,
     show,
     subplot,
@@ -16,7 +15,7 @@ from matplotlib.pylab import (
 from sklearn.model_selection import KFold
 from sklearn.linear_model import Ridge
 from sklearn.metrics import mean_squared_error
-from ucimlrepo import fetch_ucirepo  # Assuming this fetches your dataset
+from ucimlrepo import fetch_ucirepo
 
 # Fetch the heart disease dataset
 heart_disease = fetch_ucirepo(id=45)
@@ -109,7 +108,7 @@ semilogx(lambdas, mean_train_error, 'b.-', label="Mean Training Error")
 semilogx(lambdas, mean_test_error, 'r.-', label="Mean Test Error (Generalization Error)")
 xlabel("Regularization Parameter (Lambda)")
 ylabel("Mean Squared Error")
-title("Effect of Lambda on Generalization Error in least squares regression")
+title("Effect of Lambda on Generalization Error in Least Squares Regression")
 legend()
 grid()
 show()
