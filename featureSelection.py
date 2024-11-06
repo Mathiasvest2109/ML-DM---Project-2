@@ -26,7 +26,7 @@ X_encoded = pd.get_dummies(X, drop_first=True)
 X_encoded = X_encoded.dropna()
 y = y[X_encoded.index]  # Ensure y is aligned with X after dropping rows
 
-attributeNames = data.columns
+attributeNames = X.columns
 N, M = X.shape
 
 #10-fold cross validation for feature selection
