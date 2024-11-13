@@ -1,0 +1,186 @@
+ANN:
+Outer fold: 0   Hidden units 1  Etest_0 [1.1930407]
+Linear Reg
+Outer fold: 0   Lambda 0.001    Etest_0 0.9744083175600929
+Baseline
+Outer fold: 0   Etest_0 1.1599983745818452
+ANN:
+Outer fold: 1   Hidden units 1  Etest_1 [0.91507185]
+Linear Reg
+Outer fold: 1   Lambda 0.21544346900318823      Etest_1 0.8246173455181276
+Baseline
+Outer fold: 1   Etest_1 0.8514049064227938
+ANN:
+Outer fold: 2   Hidden units 2  Etest_2 [0.71420676]
+Linear Reg
+Outer fold: 2   Lambda 0.004641588833612777     Etest_2 0.5331508491934829
+Baseline
+Outer fold: 2   Etest_2 1.087607475316482
+ANN:
+Outer fold: 3   Hidden units 4  Etest_3 [0.9504006]
+Linear Reg
+Outer fold: 3   Lambda 0.46415888336127775      Etest_3 0.5947891974719209
+Baseline
+Outer fold: 3   Etest_3 0.8986653318681305
+ANN:
+Outer fold: 4   Hidden units 2  Etest_4 [0.6910608]
+Linear Reg
+Outer fold: 4   Lambda 0.021544346900318832     Etest_4 0.5900707617991964
+Baseline
+Outer fold: 4   Etest_4 0.9682168383872706
+ANN:
+Outer fold: 5   Hidden units 2  Etest_5 [0.5169248]
+Linear Reg
+Outer fold: 5   Lambda 0.021544346900318832     Etest_5 0.5127070795932289
+Baseline
+Outer fold: 5   Etest_5 0.9644472147659513
+ANN:
+Outer fold: 6   Hidden units 1  Etest_6 [0.5381185]
+Linear Reg
+Outer fold: 6   Lambda 0.1      Etest_6 0.48885649260363195
+Baseline
+Outer fold: 6   Etest_6 0.7122371586732179
+ANN:
+Outer fold: 7   Hidden units 3  Etest_7 [1.1268821]
+Linear Reg
+Outer fold: 7   Lambda 0.21544346900318823      Etest_7 0.9647649667668634
+Baseline
+Outer fold: 7   Etest_7 1.4757494938505438
+ANN:
+Outer fold: 8   Hidden units 1  Etest_8 [0.44659704]
+Linear Reg
+Outer fold: 8   Lambda 0.46415888336127775      Etest_8 0.4906793165574885
+Baseline
+Outer fold: 8   Etest_8 0.8790407633255818
+ANN:
+Outer fold: 9   Hidden units 1  Etest_9 [0.8292808]
+Linear Reg
+Outer fold: 9   Lambda 0.001    Etest_9 0.5167132164277943
+Baseline
+Outer fold: 9   Etest_9 1.0740596412669654
+
+run 2
+
+ANN:
+Outer fold: 0   Hidden units 1  Etest_0 [0.9415377]
+Linear Reg
+Outer fold: 0   Lambda 0.46415888336127775      Etest_0 0.9940723463304917
+Baseline
+Outer fold: 0   Etest_0 1.553125416917543
+ANN:
+Outer fold: 1   Hidden units 2  Etest_1 [0.8251935]
+Linear Reg
+Outer fold: 1   Lambda 0.0021544346900318843    Etest_1 0.52410556871359
+Baseline
+Outer fold: 1   Etest_1 0.6007282797103196
+ANN:
+Outer fold: 2   Hidden units 3  Etest_2 [1.1665035]
+Linear Reg
+Outer fold: 2   Lambda 0.46415888336127775      Etest_2 0.850739672669972
+Baseline
+Outer fold: 2   Etest_2 0.780105482472246
+ANN:
+Outer fold: 3   Hidden units 4  Etest_3 [0.9898878]
+Linear Reg
+Outer fold: 3   Lambda 0.01     Etest_3 0.7342146972223139
+Baseline
+Outer fold: 3   Etest_3 1.2763154966305557
+ANN:
+Outer fold: 4   Hidden units 1  Etest_4 [0.7131926]
+Linear Reg
+Outer fold: 4   Lambda 0.004641588833612777     Etest_4 0.635350129863635
+Baseline
+Outer fold: 4   Etest_4 1.1272453838269292
+ANN:
+Outer fold: 5   Hidden units 2  Etest_5 [0.6477427]
+Linear Reg
+Outer fold: 5   Lambda 0.01     Etest_5 0.371965787013787
+Baseline
+Outer fold: 5   Etest_5 0.9408800947868523
+ANN:
+Outer fold: 6   Hidden units 3  Etest_6 [1.6280606]
+Linear Reg
+Outer fold: 6   Lambda 0.004641588833612777     Etest_6 0.6306374282540916
+Baseline
+Outer fold: 6   Etest_6 0.702749018754078
+ANN:
+Outer fold: 7   Hidden units 1  Etest_7 [0.6128]
+Linear Reg
+Outer fold: 7   Lambda 0.1      Etest_7 0.5844886460804011
+Baseline
+Outer fold: 7   Etest_7 1.007987210783157
+ANN:
+Outer fold: 8   Hidden units 1  Etest_8 [0.8154671]
+Linear Reg
+Outer fold: 8   Lambda 0.46415888336127775      Etest_8 0.5493094958097483
+Baseline
+Outer fold: 8   Etest_8 0.8684770465378148
+ANN:
+Outer fold: 9   Hidden units 1  Etest_9 [0.9103394]
+Linear Reg
+Outer fold: 9   Lambda 1.0      Etest_9 0.7754812560543884
+Baseline
+Outer fold: 9   Etest_9 1.2336971840425484
+
+run 3
+
+ANN:
+Outer fold: 0   Hidden units 2  Etest_0 [0.8058992]
+Linear Reg
+Outer fold: 0   Lambda 0.46415888336127775      Etest_0 0.661082268318749
+Baseline
+Outer fold: 0   Etest_0 0.9463374981030732
+ANN:
+Outer fold: 1   Hidden units 4  Etest_1 [1.0554016]
+Linear Reg
+Outer fold: 1   Lambda 0.0021544346900318843    Etest_1 0.5704413500225435
+Baseline
+Outer fold: 1   Etest_1 0.9175051438643766
+ANN:
+Outer fold: 2   Hidden units 2  Etest_2 [0.69028854]
+Linear Reg
+Outer fold: 2   Lambda 0.21544346900318823      Etest_2 0.67703597229928
+Baseline
+Outer fold: 2   Etest_2 0.90502815202276
+ANN:
+Outer fold: 3   Hidden units 3  Etest_3 [1.0708538]
+Linear Reg
+Outer fold: 3   Lambda 0.46415888336127775      Etest_3 0.5850949374951068
+Baseline
+Outer fold: 3   Etest_3 1.2641447531634926
+ANN:
+Outer fold: 4   Hidden units 2  Etest_4 [1.2758783]
+Linear Reg
+Outer fold: 4   Lambda 0.021544346900318832     Etest_4 1.4665088063268719
+Baseline
+Outer fold: 4   Etest_4 1.5924573631943917
+ANN:
+Outer fold: 5   Hidden units 5  Etest_5 [1.1896745]
+Linear Reg
+Outer fold: 5   Lambda 0.021544346900318832     Etest_5 0.8982640065576949
+Baseline
+Outer fold: 5   Etest_5 1.0651620920638984
+ANN:
+Outer fold: 6   Hidden units 1  Etest_6 [0.5547134]
+Linear Reg
+Outer fold: 6   Lambda 0.1      Etest_6 0.5600067596301197
+Baseline
+Outer fold: 6   Etest_6 0.9540474538306766
+ANN:
+Outer fold: 7   Hidden units 1  Etest_7 [0.25188228]
+Linear Reg
+Outer fold: 7   Lambda 1.0      Etest_7 0.2599315414434689
+Baseline
+Outer fold: 7   Etest_7 0.559000391455902
+ANN:
+Outer fold: 8   Hidden units 5  Etest_8 [1.0863649]
+Linear Reg
+Outer fold: 8   Lambda 0.21544346900318823      Etest_8 0.5863202443488752
+Baseline
+Outer fold: 8   Etest_8 1.021630278562479
+ANN:
+Outer fold: 9   Hidden units 2  Etest_9 [0.7266495]
+Linear Reg
+Outer fold: 9   Lambda 0.46415888336127775      Etest_9 0.36665781258506897
+Baseline
+Outer fold: 9   Etest_9 0.826779207893334

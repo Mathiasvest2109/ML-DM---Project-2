@@ -33,11 +33,12 @@ N, M = X.shape
 C = 2
 
 # Normalize data
-ANNX = stats.zscore(X)
+X = stats.zscore(X)
+y = stats.zscore(y)
 
 k1 = k2 = 10
-hiddenUnits = 20
-n_replicates = 3  # number of networks trained in each k-fold
+hiddenUnits = 1
+n_replicates = 1  # number of networks trained in each k-fold
 max_iter = 10000
 
 lambdas = np.logspace(-3, 0, 10)
@@ -60,9 +61,9 @@ for i, (D_par_i, D_test_i) in enumerate(CV1.split(X, y)):
         )
         loss_fn = torch.nn.MSELoss()
 
-        AnnX_train = torch.Tensor(ANNX[D_train_i, :])
+        AnnX_train = torch.Tensor(X[D_train_i, :])
         ANNy_train = torch.Tensor(y[D_train_i])
-        ANNX_val = torch.Tensor(ANNX[D_val_i, :])
+        ANNX_val = torch.Tensor(X[D_val_i, :])
         ANNy_val = torch.Tensor(y[D_val_i])
 
         innernet, final_loss, learning_curve = train_neural_net(
@@ -95,9 +96,9 @@ for i, (D_par_i, D_test_i) in enumerate(CV1.split(X, y)):
         reglinerrors.append(linmse)
         if (reglinerrors[j]<reglinerrors[bestLambda]): bestLambda = j
 
-    ANNX_par = torch.Tensor(ANNX[D_par_i, :])
+    ANNX_par = torch.Tensor(X[D_par_i, :])
     ANNy_par = torch.Tensor(y[D_par_i])
-    ANNX_test = torch.Tensor(ANNX[D_test_i, :])
+    ANNX_test = torch.Tensor(X[D_test_i, :])
     ANNy_test = torch.Tensor(y[D_test_i])
     
     ANNoutermodel = lambda: torch.nn.Sequential(
