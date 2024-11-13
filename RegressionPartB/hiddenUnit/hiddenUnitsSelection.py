@@ -1,4 +1,3 @@
-# exercise 8.2.5
 import importlib_resources
 import matplotlib.pyplot as plt
 import numpy as np
@@ -36,6 +35,7 @@ C = 2
 
 # Normalize data
 X = stats.zscore(X)
+y = stats.zscore(y)
 
 genError=[] #make list for generalization error for each value of h
 
@@ -123,7 +123,6 @@ for i in range(1,hiddenlayerrange):
     # summaries_axes[1].set_xticks(np.arange(1, K + 1))
     # summaries_axes[1].set_ylabel("MSE")
     # summaries_axes[1].set_title("Test mean-squared-error")
-
     print("Diagram of best neural net in last fold:")
     weights = [net[i].weight.data.numpy().T for i in [0, 2]]
     biases = [net[i].bias.data.numpy() for i in [0, 2]]
@@ -147,13 +146,13 @@ for i in range(1,hiddenlayerrange):
 
 for i in range(1,hiddenlayerrange):
     print(
-        "\nAmount of hidden layers: {0}\nGeneralization error: {1}".format(
+        "\nAmount of hidden units: {0}\nGeneralization error: {1}".format(
             i,genError[i-1]
         )
     )
 
 
 plt.plot(range(1,hiddenlayerrange),genError, 'o')
-plt.xlabel("number of hidden layers")
+plt.xlabel("number of hidden units")
 plt.ylabel("Generalization error")
 plt.show()
